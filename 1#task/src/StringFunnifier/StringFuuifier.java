@@ -1,14 +1,12 @@
-package stringFunifier;
-
-import java.util.Arrays;
+package src.StringFunnifier;
 
 class StringFunifier {
-    private String str;
+    private String boringString;
     private int[] startIndexes;
     private int[] endIndexes;
 
     public StringFunifier(String str, int[] startIndexes, int[] endIndexes) {
-        this.str = str;
+        this.boringString = str;
         this.startIndexes = startIndexes;
         this.endIndexes = endIndexes;
     }
@@ -19,14 +17,14 @@ class StringFunifier {
         for (int i = 0; i < startIndexes.length; i++) {
             int start = startIndexes[i];
             int end = endIndexes[i];
-            result.append(str, lastEnd, start);
-            String subStr = str.substring(start, end + 1);
-            String revStr = new StringBuilder(subStr).reverse().toString();
+            result.append(boringString, lastEnd, start);
+            String subStr = boringString.substring(start, end + 1);
+            StringBuilder revStr = new StringBuilder(new StringBuilder(subStr).reverse().toString());
             result.append("(").append(revStr).append(")");
             lastEnd = end + 1;
         }
-        if (lastEnd < str.length()) {
-            result.append(str.substring(lastEnd));
+        if (lastEnd < boringString.length()) {
+            result.append(boringString.substring(lastEnd));
         }
         return result.toString();
     }
