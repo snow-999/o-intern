@@ -1,6 +1,6 @@
 package src.StringFunnifier;
 
-class StringFunifier {
+public class StringFunifier {
     private String boringString;
     private int[] startIndexes;
     private int[] endIndexes;

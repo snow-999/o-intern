@@ -1,6 +1,6 @@
 package src.StringFunnifier;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         String str = "abbccCDdBCCcc";
         int[] startIndexes = {1, 5, 7, 11};
