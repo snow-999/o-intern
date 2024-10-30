@@ -1,4 +1,4 @@
-package src.StringFunnifier;
+package src.stringfunnifier;
 
 public class Main {
     public static void main(String[] args) {
