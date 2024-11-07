@@ -1,5 +1,10 @@
 package src.operation;
 
-public interface Upper {
-    public String toUpperCase(String boringString);
+public class Upper implements Operations {
+    public String operate(String boringString) {
+        StringBuilder result = new StringBuilder();
+        String UpperString = boringString.toUpperCase();
+        result.append("(").append(UpperString).append(")");
+        return result.toString();
+    }
 }

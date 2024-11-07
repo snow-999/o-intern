@@ -2,7 +2,7 @@ package src.stringfunnifier;
 
 import src.operation.*;
 
-public class StringFunifier extends Operations {
+public class StringFunifier  {
 
     private String boringString;
     private int[] startIndexes;
@@ -17,7 +17,11 @@ public class StringFunifier extends Operations {
     }
 
     public String getFunnyString() {
-        Operations op = new Operations();
+        Copmare compare = new Copmare();
+        Lower lower = new Lower();
+        Reversed  rev = new Reversed();
+        Sorted sort = new Sorted();
+        Upper  upper = new Upper();
         StringBuilder result = new StringBuilder();
         int lastEnd = 0;
         for (int i = 0; i < startIndexes.length; i++) {
@@ -27,19 +31,19 @@ public class StringFunifier extends Operations {
             result.append(boringString, lastEnd, start);
             String subStr = boringString.substring(start, end + 1);
             if (opration.equals("REVERSE")) {
-                result.append(op.reversed(subStr));
+                result.append(compare.operate(subStr));
             }
             if (opration.equals("UPPERCASE")) {
-                result.append(op.toUpperCase(subStr));
+                result.append(upper.operate(subStr));
             }
             if (opration.equals("SORT")) {
-                result.append(op._sort(subStr));
+                result.append(sort.operate(subStr));
             }
             if (opration.equals("LOWERCASE")) {
-                result.append(op.TolowerCase(subStr));
+                result.append(lower.operate(subStr));
             }
             if (opration.equals("COMPRESSION")) {
-                result.append(op.copression(subStr));
+                result.append(compare.operate(subStr));
             }
             lastEnd = end + 1;
         }

@@ -1,5 +1,7 @@
 package src.operation;
 
-public interface Reversed {
-    public String reversed(String boringString);
+public class Reversed implements Operations{
+    public String operate(String boringString) {
+        return "(" + new StringBuilder(boringString).reverse() + ")";
+    }
 }
