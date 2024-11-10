@@ -31,7 +31,7 @@ public class StringFunifier  {
             result.append(boringString, lastEnd, start);
             String subStr = boringString.substring(start, end + 1);
             if (opration.equals("REVERSE")) {
-                result.append(compare.operate(subStr));
+                result.append(rev.operate(subStr));
             }
             if (opration.equals("UPPERCASE")) {
                 result.append(upper.operate(subStr));

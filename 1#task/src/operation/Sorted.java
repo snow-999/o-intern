@@ -3,6 +3,7 @@ package src.operation;
 import java.util.Arrays;
 
 public class Sorted  implements Operations{
+    @Override
     public String operate(String boringString) {
         StringBuilder result = new StringBuilder();
         char[] ch = boringString.toCharArray();
