@@ -1,6 +1,4 @@
-package src.operation;
-
-import java.util.Arrays;
+package src.interfaces;
 
 public interface Operations {
         public String operate(String boringString);

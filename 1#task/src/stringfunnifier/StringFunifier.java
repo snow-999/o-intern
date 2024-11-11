@@ -1,5 +1,6 @@
 package src.stringfunnifier;
 
+import src.interfaces.Operations;
 import src.operation.*;
 import java.util.List;
 
@@ -25,7 +26,8 @@ public class StringFunifier  {
             int end = endIndexes[i];
             result.append(boringString, lastEnd, start);
             String subStr = boringString.substring(start, end + 1);
-            result.append("(").append(funOperations.get(i).operate(subStr)).append(")");
+            String subOperationString = funOperations.get(i).operate(subStr);
+            result.append("(").append(subOperationString).append(")");
             lastEnd = end + 1;
         }
         if (lastEnd < boringString.length()) {

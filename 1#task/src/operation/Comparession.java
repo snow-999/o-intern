@@ -1,8 +1,15 @@
 package src.operation;
 
-public  class Comparession implements Operations{
+import src.interfaces.OperationDecorator;
+import src.interfaces.Operations;
+
+public class Comparession extends OperationDecorator {
+    public Comparession (Operations operation) {
+        super(operation);
+    }
     @Override
     public String operate(String boringString) {
+        boringString = super.operate(boringString);
         StringBuilder copmartionStr = new StringBuilder();
         int repeted = 1;
         for (int j = 0; j < boringString.length(); j++) {
@@ -16,7 +23,7 @@ public  class Comparession implements Operations{
                 }
             }
             if (j == boringString.length() - 1) {
-                copmartionStr.append(boringString.charAt(j)).append(1);
+                copmartionStr.append(boringString.charAt(j)).append(repeted);
             }
         }
         return copmartionStr.toString();
