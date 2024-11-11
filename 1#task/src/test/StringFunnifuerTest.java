@@ -1,16 +1,18 @@
-package src.stringfunnifuertest;
+package src.test;
 
 import org.junit.jupiter.api.Test;
 import src.operation.*;
 import src.stringfunnifier.StringFunifier;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StringFunnifuerTest {
     @Test
     void doesCompareWork() {
-        Copmare testcompare = new Copmare();
-        assertEquals("(s3)", testcompare.operate("sssl"));
+        Comparession testcompare = new Comparession();
+        assertEquals("s3", testcompare.operate("sssl"));
     }
     @Test
     void doesLowerWork() {
@@ -38,9 +40,9 @@ public class StringFunnifuerTest {
         String boringStringExpected = "c(hcc)H(J)K(kklm)(lm)(m1)l";
         int[] startIndexes = {1, 5, 7, 11, 13};
         int[] endIndexes = {3, 5, 10, 12, 14};
-        String[] funOperations = {"REVERSE", "UPPERCASE", "SORT", "LOWERCASE", "COMPRESSION"};
+        List<Operations> funOperation = List.of(new Reversed(), new Upper(), new Sorted(), new Lower(), new Comparession());
 
-        StringFunifier funifier = new StringFunifier(boringString, funOperations, startIndexes, endIndexes);
+        StringFunifier funifier = new StringFunifier(boringString, funOperation, startIndexes, endIndexes);
         String funnyString = funifier.getFunnyString();
         assertEquals(boringStringExpected, funnyString);
     }
