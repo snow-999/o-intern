@@ -1,10 +1,10 @@
 package src.test;
 
 import org.junit.jupiter.api.Test;
-import src.interfaces.OperationIMPL;
-import src.interfaces.Operations;
-import src.operation.*;
-import src.stringfunnifier.StringFunifier;
+import src.main.interfaces.OperationDecorator;
+import src.main.interfaces.impl.*;
+import src.main.operation.*;
+import src.main.stringfunnifier.StringFunifier;
 
 import java.util.List;
 
@@ -14,18 +14,18 @@ public class StringFunnifuerTest {
 
     @Test
     void doesLowerWork() {
-        Lower testLower = new Lower(new OperationIMPL());
+        Lower testLower = new Lower(new OperationImpl());
         assertEquals("l", testLower.operate("L"));
     }
     @Test
     void doesSortedWork() {
-        Sorted testSorted = new Sorted(new OperationIMPL());
+        Sorted testSorted = new Sorted(new OperationImpl());
         assertEquals("abcd", testSorted.operate("cdba"));
     }
 
     @Test
     void doesUpperWork() {
-        Upper testUpper = new Upper(new OperationIMPL());
+        Upper testUpper = new Upper(new OperationImpl());
         assertEquals("A", testUpper.operate("a"));
     }
     @Test
@@ -35,11 +35,11 @@ public class StringFunnifuerTest {
         int[] startIndexes = {1, 5, 7, 11, 13};
         int[] endIndexes = {3, 5, 10, 12, 14};
         List<Operations> funOperation = List.of(
-                new Reversed(new Comparession(new OperationIMPL())),
-                new Upper((new OperationIMPL())),
-                new Comparession(new Upper(new Sorted(new OperationIMPL()))),
-                new Comparession(new OperationIMPL()),
-                new Reversed(new Upper(new Comparession(new OperationIMPL())))
+                new Reversed(new Compression(new OperationImpl())),
+                new Upper((new OperationImpl())),
+                new Compression(new Upper(new Sorted(new OperationImpl()))),
+                new Compression(new OperationImpl()),
+                new Reversed(new Upper(new Compression(new OperationImpl())))
 
         );
         StringFunifier funifier = new StringFunifier(boringString, funOperation, startIndexes, endIndexes);

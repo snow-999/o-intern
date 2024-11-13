@@ -1,7 +1,7 @@
-package src.operation;
+package src.main.operation;
 
-import src.interfaces.OperationDecorator;
-import src.interfaces.Operations;
+import src.main.interfaces.OperationDecorator;
+import src.main.interfaces.impl.*;
 
 public class Lower extends OperationDecorator {
     public Lower (Operations operation) {

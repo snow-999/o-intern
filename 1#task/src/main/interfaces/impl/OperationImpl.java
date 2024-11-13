@@ -1,6 +1,6 @@
-package src.interfaces;
+package src.main.interfaces.impl;
 
-public class OperationIMPL implements Operations{
+public class OperationImpl implements Operations {
 
     @Override
     public String operate(String boringString) {

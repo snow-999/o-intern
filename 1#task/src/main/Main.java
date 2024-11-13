@@ -1,8 +1,10 @@
-package src.stringfunnifier;
+package src.main;
 
-import src.interfaces.OperationIMPL;
-import src.interfaces.Operations;
-import src.operation.*;
+import src.main.interfaces.impl.*;
+import src.main.interfaces.*;
+import src.main.operation.*;
+import src.main.stringfunnifier.StringFunifier;
+
 import java.util.List;
 
 public class Main {
@@ -11,11 +13,11 @@ public class Main {
         int[] startIndexes = {1, 5, 7, 11, 13};
         int[] endIndexes = {3, 5, 10, 12, 14};
         List<Operations> funOperation = List.of(
-                new Reversed(new Comparession(new OperationIMPL())),
-                new Upper((new OperationIMPL())),
-                new Comparession(new Upper(new Sorted(new OperationIMPL()))),
-                new Comparession(new OperationIMPL()),
-                new Reversed(new Upper(new Comparession(new OperationIMPL())))
+                new Reversed(new Compression(new OperationImpl())),
+                new Upper((new OperationImpl())),
+                new Compression(new Upper(new Sorted(new OperationImpl()))),
+                new Compression(new OperationImpl()),
+                new Reversed(new Upper(new Compression(new OperationImpl())))
         );
         StringFunifier funifier = new StringFunifier(str, funOperation, startIndexes, endIndexes);
         String funnyString = funifier.getFunnyString();

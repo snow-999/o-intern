@@ -1,8 +1,12 @@
-package src.interfaces;
+package src.main.interfaces;
+
+import src.main.interfaces.impl.*;
 
 public abstract class OperationDecorator implements Operations{
-    private Operations operation;
-    public OperationDecorator(Operations operation) {
+    private final Operations operation;
+
+    public OperationDecorator(Operations operation)
+    {
         this.operation = operation;
     }
     @Override

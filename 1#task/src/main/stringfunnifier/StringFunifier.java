@@ -1,8 +1,9 @@
-package src.stringfunnifier;
+package src.main.stringfunnifier;
 
-import src.interfaces.Operations;
-import src.operation.*;
+import src.main.interfaces.*;
+import src.main.operation.*;
 import java.util.List;
+import src.main.interfaces.impl.*;
 
 public class StringFunifier  {
 
